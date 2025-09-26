@@ -94,15 +94,20 @@ export default function ElegantWeddingInvitation() {
               <span className="text-xl font-light tracking-wider">AC & AB</span>
             </div>
             <div className="hidden md:flex space-x-12">
-              {['INICIO', 'NUESTRA HISTORIA', 'CEREMONIA', 'PROGRAMA', 'FORMULARIO'].map((item, index) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(index === 0 ? 'hero' : item.toLowerCase().replace(' ', '-'))}
-                  className="text-sm font-medium text-gray-600 hover:text-black transition-colors tracking-wider"
-                >
-                  {item}
-                </button>
-              ))}
+              {['INICIO', 'NUESTRA HISTORIA', 'CEREMONIA', 'PROGRAMA', 'FORMULARIO'].map((item, index) => {
+                const sectionId = index === 0 ? 'hero' : item.toLowerCase().replace(' ', '-');
+                return (
+                  <button
+                    key={item}
+                    onClick={() => scrollToSection(sectionId)}
+                    className={`text-sm font-medium tracking-wider transition-colors ${
+                      activeSection === sectionId ? 'text-black font-bold' : 'text-gray-600 hover:text-black'
+                    }`}
+                  >
+                    {item}
+                  </button>
+                );
+              })}
             </div>
             <a href="#formulario" className="border border-black px-6 py-2 text-sm font-medium tracking-wider hover:bg-black hover:text-white transition-all duration-300">
               CONFIRMA TU ASISTENCIA
