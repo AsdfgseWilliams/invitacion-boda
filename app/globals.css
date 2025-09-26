@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montaga&display=swap');
+@import url('https://fonts.cdnfonts.com/css/anecor-gheroos');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Lora', serif;
+  }
+}
+
+@layer components {
+
+   .font-anecor {
+    font-family: 'Anecor Gheroos', serif;
+  }
+  
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+ 
+  .card {
+    @apply bg-white rounded-lg shadow-lg p-6 border border-rose-100;
+  }
+ 
+  .btn-primary {
+    @apply bg-rose-500 hover:bg-rose-600 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200;
+  }
+ 
+  .btn-secondary {
+    @apply bg-white hover:bg-rose-50 text-rose-600 border border-rose-300 px-6 py-3 rounded-lg font-medium transition-colors duration-200;
+  }
+  
+  .script-font {
+    font-family: 'Anecor Gheroos', serif;
+  }
+}
