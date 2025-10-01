@@ -88,7 +88,7 @@ export default function ElegantWeddingInvitation() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 border border-black rounded-full flex items-center justify-center">
+              <div className="hidden md:visible w-8 h-8 border border-black rounded-full md:flex items-center justify-center">
                 <Heart className="w-4 h-4 text-black" />
               </div>
               <span className="text-xl font-light tracking-wider">AC & AB</span>
@@ -109,7 +109,10 @@ export default function ElegantWeddingInvitation() {
                 );
               })}
             </div>
-            <a href="#formulario" className="border border-black px-6 py-2 text-sm font-medium tracking-wider hover:bg-black hover:text-white transition-all duration-300">
+            <a
+              href="#formulario"
+              className="border border-black px-6 py-2 text-sm font-medium tracking-wider hover:bg-black hover:text-white transition-all duration-300 flex justify-center items-center text-center"
+            >
               CONFIRMA TU ASISTENCIA
             </a>
           </div>
@@ -120,11 +123,11 @@ export default function ElegantWeddingInvitation() {
       <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-50">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-black/20 z-10" />
+          <div className="absolute inset-0 bg-black/60 z-10" />
           <img
-            src="/img/1.webp"
+            src="/img/52.webp"
             alt="Wedding couple"
-            className="w-full h-full object-cover filter grayscale"
+            className="w-full h-full object-cover object-bottom filter grayscale"
           />
         </div>
 
@@ -220,7 +223,7 @@ export default function ElegantWeddingInvitation() {
                   Este 15 de noviembre no marca el final de nuestra historia, sino celebra el inicio de una nueva etapa: con más risas, más felicidad, más amor… y, con suerte, menos pulmonías. 
                 </p>
                 <p>
-                  Queremos compartir esta celebración tan especial con vosotros en la magnífica sala Zuu del Gran Hotel Hyatt, rodeados de quienes forman parte de nuestra historia.
+                  Queremos compartir esta celebración tan especial con vosotros en el Hotel Grand Hyatt, rodeados de quienes forman parte de nuestra historia.
                 </p>
               </div>
             </motion.div>
@@ -398,7 +401,7 @@ export default function ElegantWeddingInvitation() {
 
       {/* RSVP Section */}
       <section id="formulario" className="py-32 bg-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -415,7 +418,7 @@ export default function ElegantWeddingInvitation() {
             </p>
             <div className="mt-8">
               <p className="text-sm text-gray-500 tracking-wider">
-                CONFIRMA ANTES DEL 5 DE NOVIEMBRE
+                CONFIRMA ANTES DEL 1 DE NOVIEMBRE
               </p>
             </div>
           </motion.div>
@@ -425,7 +428,7 @@ export default function ElegantWeddingInvitation() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="bg-gray-50 p-12 md:p-16"
+            className="bg-gray-50 py-12 px-6 md:p-16"
           >
             <RSVPForm 
               onSubmitSuccess={handleFormSuccess}

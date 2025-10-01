@@ -8,6 +8,8 @@ interface RSVPFormData {
     guests: string;
     attendance: string;
     dietary: string;
+    room: string;
+    parking: string;
     message: string;
 }
 
@@ -23,6 +25,8 @@ export default function RSVPForm({ onSubmitSuccess, onSubmitError }: RSVPFormPro
         guests: '1',
         attendance: '',
         dietary: '',
+        room: '',
+        parking: '',
         message: ''
     });
 
@@ -83,6 +87,8 @@ export default function RSVPForm({ onSubmitSuccess, onSubmitError }: RSVPFormPro
             guests: '1',
             attendance: '',
             dietary: '',
+            room: '',
+            parking: '',
             message: ''
         });
     };
@@ -111,7 +117,7 @@ export default function RSVPForm({ onSubmitSuccess, onSubmitError }: RSVPFormPro
     }
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-8">
+        <form onSubmit={handleSubmit} className="space-y-8 w-full">
             <div className="grid md:grid-cols-2 gap-6">
                 <div>
                     <label className="block text-sm font-medium text-gray-700 mb-3 tracking-wide">
@@ -184,7 +190,44 @@ export default function RSVPForm({ onSubmitSuccess, onSubmitError }: RSVPFormPro
                 </div>
             </div>
 
-            <div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-3 tracking-wide">
+                        ¿NECESITAS HABITACIÓN?
+                    </label>
+                    <select
+                        name="room"
+                        value={formData.room}
+                        onChange={handleChange}
+                        disabled={isSubmitting}
+                        className="w-full border-0 border-b border-gray-300 bg-transparent px-0 py-3 text-black focus:outline-none focus:border-black transition-colors appearance-none disabled:opacity-50"
+                    >
+                        <option value="">Selecciona una opción</option>
+                        <option value="yes">Sí</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-3 tracking-wide">
+                        ¿NECESITAS PARKING?
+                    </label>
+                    <select
+                        name="parking"
+                        value={formData.parking}
+                        onChange={handleChange}
+                        disabled={isSubmitting}
+                        className="w-full border-0 border-b border-gray-300 bg-transparent px-0 py-3 text-black focus:outline-none focus:border-black transition-colors appearance-none disabled:opacity-50"
+                    >
+                        <option value="">Selecciona una opción</option>
+                        <option value="yes">Sí</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </div>
+
+             <div>
                 <label className="block text-sm font-medium text-gray-700 mb-3 tracking-wide">
                     RESTRICCIONES ALIMENTARIAS
                 </label>
