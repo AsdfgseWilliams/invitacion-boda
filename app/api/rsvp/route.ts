@@ -2,7 +2,7 @@ import { google } from "googleapis";
 import type { NextRequest } from "next/server";
 
 export async function POST(req: NextRequest) {
-  const { name, email, guests, attendance, dietary, message } = await req.json();
+  const { name, email, guests, attendance, room, parking, dietary, message } = await req.json();
 
   try {
     const auth = new google.auth.GoogleAuth({
@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
       range: "'Hoja 1'!A:F",
       valueInputOption: "RAW",
       requestBody: {
-        values: [[name, email, guests, attendance, dietary, message]],
+        values: [[name, email, guests, attendance, room, parking, dietary, message]],
       },
     });
 
